@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		060782B2250CE27700A87020 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060782B1250CE27700A87020 /* AppDelegate.swift */; };
-		060782B4250CE27700A87020 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060782B3250CE27700A87020 /* SceneDelegate.swift */; };
 		060782B6250CE27700A87020 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060782B5250CE27700A87020 /* FeedViewController.swift */; };
 		060782B9250CE27700A87020 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 060782B7250CE27700A87020 /* Main.storyboard */; };
 		060782BB250CE27A00A87020 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 060782BA250CE27A00A87020 /* Assets.xcassets */; };
@@ -22,6 +21,25 @@
 		7667CEBA25DBF7CA008932A8 /* PhotoContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7667CEB925DBF7CA008932A8 /* PhotoContent.swift */; };
 		7667CEBD25DC1E1D008932A8 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7667CEBC25DC1E1D008932A8 /* PhotosViewController.swift */; };
 		7667CEC225DC3DEB008932A8 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7667CEC125DC3DEB008932A8 /* CustomCell.swift */; };
+		769467F8260A173E009CE985 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769467F7260A173E009CE985 /* MainTabBarController.swift */; };
+		769467FE260A17E0009CE985 /* PhotoContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7667CEB925DBF7CA008932A8 /* PhotoContent.swift */; };
+		769467FF260A17E0009CE985 /* PhotosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7667CEB525DBC231008932A8 /* PhotosTableViewCell.swift */; };
+		76946800260A17E0009CE985 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E5FE9E25C1B29900098D33 /* LoginViewController.swift */; };
+		76946801260A17E0009CE985 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060782B5250CE27700A87020 /* FeedViewController.swift */; };
+		76946802260A17E0009CE985 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060782B1250CE27700A87020 /* AppDelegate.swift */; };
+		76946803260A17E0009CE985 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7667CEAF25D1651C008932A8 /* ProfileTableViewCell.swift */; };
+		76946804260A17E0009CE985 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060782C5250CEB0A00A87020 /* InfoViewController.swift */; };
+		76946805260A17E0009CE985 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060782C9250CEE7200A87020 /* Post.swift */; };
+		76946806260A17E0009CE985 /* PostContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7667CEAC25D15A7A008932A8 /* PostContent.swift */; };
+		76946807260A17E0009CE985 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E56B7225B197CB00BFEB19 /* ProfileHeaderView.swift */; };
+		76946808260A17E0009CE985 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769467F7260A173E009CE985 /* MainTabBarController.swift */; };
+		76946809260A17E0009CE985 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7667CEBC25DC1E1D008932A8 /* PhotosViewController.swift */; };
+		7694680A260A17E0009CE985 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E56B7525B1983100BFEB19 /* ProfileViewController.swift */; };
+		7694680B260A17E0009CE985 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060782C7250CEE5D00A87020 /* PostViewController.swift */; };
+		7694680C260A17E0009CE985 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7667CEC125DC3DEB008932A8 /* CustomCell.swift */; };
+		7694680F260A17E0009CE985 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 060782BC250CE27A00A87020 /* LaunchScreen.storyboard */; };
+		76946810260A17E0009CE985 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 060782BA250CE27A00A87020 /* Assets.xcassets */; };
+		76946811260A17E0009CE985 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 060782B7250CE27700A87020 /* Main.storyboard */; };
 		76E56B7325B197CB00BFEB19 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E56B7225B197CB00BFEB19 /* ProfileHeaderView.swift */; };
 		76E56B7625B1983100BFEB19 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E56B7525B1983100BFEB19 /* ProfileViewController.swift */; };
 		76E5FE9F25C1B29900098D33 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E5FE9E25C1B29900098D33 /* LoginViewController.swift */; };
@@ -30,7 +48,6 @@
 /* Begin PBXFileReference section */
 		060782AE250CE27700A87020 /* Navigation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Navigation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		060782B1250CE27700A87020 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		060782B3250CE27700A87020 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		060782B5250CE27700A87020 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		060782B8250CE27700A87020 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		060782BA250CE27A00A87020 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -45,6 +62,9 @@
 		7667CEB925DBF7CA008932A8 /* PhotoContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoContent.swift; sourceTree = "<group>"; };
 		7667CEBC25DC1E1D008932A8 /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 		7667CEC125DC3DEB008932A8 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		769467F7260A173E009CE985 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		76946815260A17E0009CE985 /* Navigation copy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Navigation copy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		76946816260A17E0009CE985 /* Navigation copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Navigation copy-Info.plist"; path = "/Users/ivankamenev/Desktop/Swift/netology_classwork/IOSINT/Navigation copy-Info.plist"; sourceTree = "<absolute>"; };
 		76E56B7225B197CB00BFEB19 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		76E56B7525B1983100BFEB19 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		76E5FE9E25C1B29900098D33 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -52,6 +72,13 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		060782AB250CE27700A87020 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7694680D260A17E0009CE985 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -66,6 +93,7 @@
 			children = (
 				060782B0250CE27700A87020 /* Navigation */,
 				060782AF250CE27700A87020 /* Products */,
+				76946816260A17E0009CE985 /* Navigation copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				060782AE250CE27700A87020 /* Navigation.app */,
+				76946815260A17E0009CE985 /* Navigation copy.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -82,7 +111,6 @@
 			children = (
 				76E56B6C25B18FC500BFEB19 /* Profile */,
 				060782B1250CE27700A87020 /* AppDelegate.swift */,
-				060782B3250CE27700A87020 /* SceneDelegate.swift */,
 				060782B5250CE27700A87020 /* FeedViewController.swift */,
 				060782C5250CEB0A00A87020 /* InfoViewController.swift */,
 				060782C7250CEE5D00A87020 /* PostViewController.swift */,
@@ -91,6 +119,7 @@
 				060782BA250CE27A00A87020 /* Assets.xcassets */,
 				060782BC250CE27A00A87020 /* LaunchScreen.storyboard */,
 				060782BF250CE27A00A87020 /* Info.plist */,
+				769467F7260A173E009CE985 /* MainTabBarController.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -131,6 +160,23 @@
 			productReference = 060782AE250CE27700A87020 /* Navigation.app */;
 			productType = "com.apple.product-type.application";
 		};
+		769467FC260A17E0009CE985 /* Navigation copy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 76946812260A17E0009CE985 /* Build configuration list for PBXNativeTarget "Navigation copy" */;
+			buildPhases = (
+				769467FD260A17E0009CE985 /* Sources */,
+				7694680D260A17E0009CE985 /* Frameworks */,
+				7694680E260A17E0009CE985 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Navigation copy";
+			productName = Navigation;
+			productReference = 76946815260A17E0009CE985 /* Navigation copy.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -160,6 +206,7 @@
 			projectRoot = "";
 			targets = (
 				060782AD250CE27700A87020 /* Navigation */,
+				769467FC260A17E0009CE985 /* Navigation copy */,
 			);
 		};
 /* End PBXProject section */
@@ -172,6 +219,16 @@
 				060782BE250CE27A00A87020 /* LaunchScreen.storyboard in Resources */,
 				060782BB250CE27A00A87020 /* Assets.xcassets in Resources */,
 				060782B9250CE27700A87020 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7694680E260A17E0009CE985 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7694680F260A17E0009CE985 /* LaunchScreen.storyboard in Resources */,
+				76946810260A17E0009CE985 /* Assets.xcassets in Resources */,
+				76946811260A17E0009CE985 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,11 +249,33 @@
 				060782CA250CEE7200A87020 /* Post.swift in Sources */,
 				7667CEAD25D15A7A008932A8 /* PostContent.swift in Sources */,
 				76E56B7325B197CB00BFEB19 /* ProfileHeaderView.swift in Sources */,
-				060782B4250CE27700A87020 /* SceneDelegate.swift in Sources */,
+				769467F8260A173E009CE985 /* MainTabBarController.swift in Sources */,
 				7667CEBD25DC1E1D008932A8 /* PhotosViewController.swift in Sources */,
 				76E56B7625B1983100BFEB19 /* ProfileViewController.swift in Sources */,
 				060782C8250CEE5D00A87020 /* PostViewController.swift in Sources */,
 				7667CEC225DC3DEB008932A8 /* CustomCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		769467FD260A17E0009CE985 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				769467FE260A17E0009CE985 /* PhotoContent.swift in Sources */,
+				769467FF260A17E0009CE985 /* PhotosTableViewCell.swift in Sources */,
+				76946800260A17E0009CE985 /* LoginViewController.swift in Sources */,
+				76946801260A17E0009CE985 /* FeedViewController.swift in Sources */,
+				76946802260A17E0009CE985 /* AppDelegate.swift in Sources */,
+				76946803260A17E0009CE985 /* ProfileTableViewCell.swift in Sources */,
+				76946804260A17E0009CE985 /* InfoViewController.swift in Sources */,
+				76946805260A17E0009CE985 /* Post.swift in Sources */,
+				76946806260A17E0009CE985 /* PostContent.swift in Sources */,
+				76946807260A17E0009CE985 /* ProfileHeaderView.swift in Sources */,
+				76946808260A17E0009CE985 /* MainTabBarController.swift in Sources */,
+				76946809260A17E0009CE985 /* PhotosViewController.swift in Sources */,
+				7694680A260A17E0009CE985 /* ProfileViewController.swift in Sources */,
+				7694680B260A17E0009CE985 /* PostViewController.swift in Sources */,
+				7694680C260A17E0009CE985 /* CustomCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,6 +424,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 79RZ866842;
 				INFOPLIST_FILE = Navigation/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -363,6 +443,45 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 79RZ866842;
 				INFOPLIST_FILE = Navigation/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.artemnovichkov.Navigation;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		76946813260A17E0009CE985 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 79RZ866842;
+				INFOPLIST_FILE = "Navigation copy-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.artemnovichkov.Navigation;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		76946814260A17E0009CE985 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 79RZ866842;
+				INFOPLIST_FILE = "Navigation copy-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -391,6 +510,15 @@
 			buildConfigurations = (
 				060782C3250CE27A00A87020 /* Debug */,
 				060782C4250CE27A00A87020 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		76946812260A17E0009CE985 /* Build configuration list for PBXNativeTarget "Navigation copy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				76946813260A17E0009CE985 /* Debug */,
+				76946814260A17E0009CE985 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

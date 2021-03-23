@@ -51,7 +51,7 @@ class LoginViewController: UIViewController {
     private let emailAndPasswordView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .systemGray6
+        view.backgroundColor = .systemGray
         view.layer.borderWidth = 0.5
         view.layer.borderColor = UIColor.lightGray.cgColor
         view.layer.cornerRadius = 10
@@ -74,14 +74,14 @@ class LoginViewController: UIViewController {
         textField.font = UIFont.systemFont(ofSize: 16, weight: .regular)
         textField.tintColor = UIColor.init(named: "accentColor")
         textField.autocapitalizationType = .none
-        textField.backgroundColor = .systemGray6
+        textField.backgroundColor = .systemGray
         return textField
     }()
     
     private let passwordTextFielf: UITextField = {
        let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.backgroundColor = .systemGray6
+        textField.backgroundColor = .systemGray
         textField.isSecureTextEntry = true
         textField.isEnabled = true
         textField.placeholder = "Enter your password"
@@ -89,7 +89,7 @@ class LoginViewController: UIViewController {
         textField.font = UIFont.systemFont(ofSize: 16, weight: .regular)
         textField.tintColor = UIColor.init(named: "accentColor")
         textField.autocapitalizationType = .none
-        textField.backgroundColor = .systemGray6
+        textField.backgroundColor = .systemGray
         return textField
         
     }()

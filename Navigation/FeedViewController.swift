@@ -10,6 +10,8 @@ import UIKit
 
 final class FeedViewController: UIViewController {
     
+    var backgroundTask: UIBackgroundTaskIdentifier = .invalid
+    
     let post: Post = Post(title: "Пост")
     
     let stackView = UIStackView()
@@ -29,6 +31,7 @@ final class FeedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print(type(of: self), #function)
+        view.backgroundColor = .green
         
         configurateStackView()
         addButtonToStackView(button)
@@ -39,16 +42,20 @@ final class FeedViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        registerBackgroundTask()
+        
         print(type(of: self), #function)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         print(type(of: self), #function)
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        ​endBackgroundTask()
         print(type(of: self), #function)
     }
     
@@ -116,5 +123,21 @@ final class FeedViewController: UIViewController {
             return
         }
         postViewController.post = post
+    }
+}
+
+extension FeedViewController {
+    func registerBackgroundTask() {
+        print("Background task started.")
+        backgroundTask = UIApplication.shared.beginBackgroundTask { [weak self] in
+            self?.​endBackgroundTask()
+        }
+        assert(backgroundTask != .invalid)
+    }
+
+    func ​endBackgroundTask() {
+        print("Background task ended.")
+        UIApplication.shared.endBackgroundTask(backgroundTask)
+        backgroundTask = .invalid
     }
 }

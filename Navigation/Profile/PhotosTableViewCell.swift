@@ -60,7 +60,7 @@ class PhotosTableViewCell: UITableViewCell {
     private let arrowImage: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
-        image.image = UIImage(systemName: "arrow.forward")
+        image.image = UIImage(named: "arrow.forward")
         image.tintColor = .black
         return image
     }()
