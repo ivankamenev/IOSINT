@@ -8,6 +8,7 @@
 
 import UIKit
 import Foundation
+import SnapKit
 
 private enum State {
     case expanded
@@ -69,17 +70,11 @@ class ProfileHeaderView: UITableViewHeaderFooterView {
         return textLabel
     }()
     
-    var avatarImageView: UIImageView = {
-        let imageView = UIImageView(image: #imageLiteral(resourceName: "avatar"))
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.contentMode = .scaleAspectFit
-        imageView.layer.masksToBounds = true
-        imageView.layer.cornerRadius = 50
-        imageView.layer.borderWidth = 3
-        imageView.layer.borderColor = UIColor.white.cgColor
-        imageView.clipsToBounds = true
-        imageView.isUserInteractionEnabled = true
-        return imageView
+    private lazy var avatarImageView: PersonView = {
+        let personView = PersonView()
+        personView.named = "avatar"
+        personView.translatesAutoresizingMaskIntoConstraints = false
+        return personView
     }()
     
     let statusButton: UIButton = {
@@ -262,39 +257,39 @@ class ProfileHeaderView: UITableViewHeaderFooterView {
         
         layoutMarginsDidChange()
         
-        let constraints = [
-            
-            avatarImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
-            avatarImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-            avatarImageView.bottomAnchor.constraint(equalTo: statusButton.topAnchor, constant: -16),
-            avatarImageView.heightAnchor.constraint(equalTo: widthAnchor, multiplier: 0.3),
-            avatarImageView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.3),
-           
-            nameTextLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 27),
-            nameTextLabel.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: 20),
-            nameTextLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
-            
-            statusTextLabel.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: 20),
-            statusTextLabel.topAnchor.constraint(equalTo: nameTextLabel.bottomAnchor, constant: 10),
-            statusTextLabel.bottomAnchor.constraint(equalTo: statusButton.topAnchor, constant: -54),
-            statusTextLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
-            
-            statusButton.topAnchor.constraint(equalTo: avatarImageView.bottomAnchor, constant: 16),
-            statusButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16),
-            statusButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-            statusButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
-            statusButton.heightAnchor.constraint(equalToConstant: 50),
-            
-            statusTextField.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
-            statusTextField.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: 20),
-            statusTextField.heightAnchor.constraint(equalToConstant: 40),
-            statusTextField.bottomAnchor.constraint(equalTo: statusButton.topAnchor, constant: -10)
-            
-        ]
+        avatarImageView.snp.makeConstraints { make in
+            make.top.leading.equalTo(contentView).offset(16)
+            make.bottom.equalTo(statusButton.snp.top).offset(-16)
+            make.height.width.equalTo(100)
+        }
         
-        NSLayoutConstraint.activate(constraints)
+        nameTextLabel.snp.makeConstraints { make in
+            make.top.equalTo(contentView).offset(27)
+            make.leading.equalTo(avatarImageView.snp.trailing).offset(20)
+            make.trailing.equalTo(contentView).offset(-16)
+        }
+        
+        statusTextLabel.snp.makeConstraints { make in
+            make.leading.equalTo(avatarImageView.snp.trailing).offset(20)
+            make.top.equalTo(nameTextLabel.snp.bottom).offset(10)
+            make.bottom.equalTo(statusButton.snp.top).offset(-54)
+            make.trailing.equalTo(contentView).offset(-16)
+        }
+        
+        statusButton.snp.makeConstraints { make in
+            make.trailing.bottom.equalTo(contentView).offset(-16)
+            make.leading.equalTo(contentView).offset(16)
+        }
+        
+        statusTextField.snp.makeConstraints { make in
+            make.trailing.equalTo(contentView).offset(-16)
+            make.leading.equalTo(avatarImageView.snp.trailing).offset(20)
+            make.bottom.equalTo(statusButton.snp.top).offset(-10)
+            make.height.equalTo(40)
+        }
+            
     }
-        
+
 }
 
 extension UIView {
