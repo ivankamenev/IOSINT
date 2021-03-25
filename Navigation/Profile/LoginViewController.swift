@@ -8,14 +8,7 @@
 
 import UIKit
 
-protocol LoginViewControllerDelegate: class {
-    func checkLogin(_: String) -> Bool
-    func checkPassword(_: String) -> Bool
-}
-
 class LoginViewController: UIViewController {
-    
-    var delegate: LoginViewControllerDelegate?
     
     private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
@@ -50,21 +43,9 @@ class LoginViewController: UIViewController {
     }()
     
     @objc func logInButtomTaped() {
-        if loginCheck() {
-            let profileViewController = ProfileViewController()
-            show(profileViewController, sender: nil)
-        } else {
-            let alert = UIAlertController(title: "Error", message: "Wrong login or password", preferredStyle: .alert)
-            let action = UIAlertAction(title: "OK", style: .default)
-            alert.addAction(action)
-            present(alert, animated: true, completion: nil)
-        }
-    }
-    
-    func loginCheck() -> Bool {
-        guard delegate != nil else { return false}
-        guard (delegate?.checkLogin(self.emailOrPhoneTextFielf.text ?? ""))! && ((delegate?.checkPassword(self.passwordTextFielf.text ?? "")) != nil) else { return true }
-        return false
+        
+        show(ProfileViewController(), sender: self)
+        
     }
     
     private let emailAndPasswordView: UIView = {
@@ -157,7 +138,7 @@ class LoginViewController: UIViewController {
         wrapperView.addSubviews(logoView, logInButton, emailAndPasswordView)
         emailAndPasswordView.addSubviews(line, emailOrPhoneTextFielf, passwordTextFielf)
         
-        delegate = LoginValidator()
+        
         
         
         //MARK: - Add constraints
@@ -220,22 +201,4 @@ extension UIView {
     }
 }
 
-class LoginValidator: LoginViewControllerDelegate {
 
-    func checkLogin(_ login: String) -> Bool {
-        guard login == Checker.shared.login else { return true}
-        return false
-    }
-
-    func checkPassword(_ password: String) -> Bool {
-        guard password == Checker.shared.password else { return true}
-        return false
-    }
-}
-
-class Checker {
-    static let shared = Checker()
-    let login = "Ivan"
-    let password = "Kamenev"
-    private init() {}
-}
