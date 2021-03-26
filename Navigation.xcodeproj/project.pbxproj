@@ -41,6 +41,8 @@
 		767F5B382604E57800775DBC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 060782BA250CE27A00A87020 /* Assets.xcassets */; };
 		76856A00260BA35B00698432 /* iOSIntPackage in Frameworks */ = {isa = PBXBuildFile; productRef = 768569FF260BA35B00698432 /* iOSIntPackage */; };
 		76856A04260BA3C100698432 /* PersonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76856A03260BA3C100698432 /* PersonView.swift */; };
+		76856A55260DCDAB00698432 /* Pods-Navigation.debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = DB87C4DFFAA1249E0174796B /* Pods-Navigation.debug.xcconfig */; };
+		76856A58260DCDAC00698432 /* Pods-Navigation.debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = DB87C4DFFAA1249E0174796B /* Pods-Navigation.debug.xcconfig */; };
 		76E56B7325B197CB00BFEB19 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E56B7225B197CB00BFEB19 /* ProfileHeaderView.swift */; };
 		76E56B7625B1983100BFEB19 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E56B7525B1983100BFEB19 /* ProfileViewController.swift */; };
 		76E5FE9F25C1B29900098D33 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E5FE9E25C1B29900098D33 /* LoginViewController.swift */; };
@@ -260,6 +262,7 @@
 			files = (
 				060782BE250CE27A00A87020 /* LaunchScreen.storyboard in Resources */,
 				060782BB250CE27A00A87020 /* Assets.xcassets in Resources */,
+				76856A55260DCDAB00698432 /* Pods-Navigation.debug.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +272,7 @@
 			files = (
 				767F5B372604E57800775DBC /* LaunchScreen.storyboard in Resources */,
 				767F5B382604E57800775DBC /* Assets.xcassets in Resources */,
+				76856A58260DCDAC00698432 /* Pods-Navigation.debug.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
