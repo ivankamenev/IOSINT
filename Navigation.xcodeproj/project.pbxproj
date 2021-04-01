@@ -22,6 +22,11 @@
 		7667CEBA25DBF7CA008932A8 /* PhotoContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7667CEB925DBF7CA008932A8 /* PhotoContent.swift */; };
 		7667CEBD25DC1E1D008932A8 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7667CEBC25DC1E1D008932A8 /* PhotosViewController.swift */; };
 		7667CEC225DC3DEB008932A8 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7667CEC125DC3DEB008932A8 /* CustomCell.swift */; };
+		767CDDDD2615E501003722A4 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767CDDDC2615E501003722A4 /* Coordinator.swift */; };
+		767CDDE12615E590003722A4 /* FeedCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767CDDE02615E590003722A4 /* FeedCoordinator.swift */; };
+		767CDDE52615E5F3003722A4 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767CDDE42615E5F3003722A4 /* LoginCoordinator.swift */; };
+		767CDDE92615E67D003722A4 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767CDDE82615E67D003722A4 /* MainCoordinator.swift */; };
+		767CDDED2615EC8C003722A4 /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767CDDEC2615EC8C003722A4 /* ProfileCoordinator.swift */; };
 		767F5B262604E57800775DBC /* PhotoContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7667CEB925DBF7CA008932A8 /* PhotoContent.swift */; };
 		767F5B272604E57800775DBC /* PhotosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7667CEB525DBC231008932A8 /* PhotosTableViewCell.swift */; };
 		767F5B282604E57800775DBC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E5FE9E25C1B29900098D33 /* LoginViewController.swift */; };
@@ -67,6 +72,11 @@
 		7667CEB925DBF7CA008932A8 /* PhotoContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoContent.swift; sourceTree = "<group>"; };
 		7667CEBC25DC1E1D008932A8 /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 		7667CEC125DC3DEB008932A8 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		767CDDDC2615E501003722A4 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		767CDDE02615E590003722A4 /* FeedCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCoordinator.swift; sourceTree = "<group>"; };
+		767CDDE42615E5F3003722A4 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
+		767CDDE82615E67D003722A4 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		767CDDEC2615EC8C003722A4 /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
 		767F5B3C2604E57800775DBC /* Navigation copy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Navigation copy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		767F5B3D2604E57800775DBC /* Navigation copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Navigation copy-Info.plist"; path = "/Users/ivankamenev/Desktop/Swift/netology_classwork/UIIOS/Homework/Navigation 2/Navigation copy-Info.plist"; sourceTree = "<absolute>"; };
 		76856A03260BA3C100698432 /* PersonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonView.swift; sourceTree = "<group>"; };
@@ -122,13 +132,12 @@
 		060782B0250CE27700A87020 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
+				767CDDF22615F35F003722A4 /* Controllers */,
+				767CDDF12615F0B5003722A4 /* Login */,
+				767CDDF02615F086003722A4 /* Data */,
+				767CDDDB2615E291003722A4 /* Coordinators */,
 				76E56B6C25B18FC500BFEB19 /* Profile */,
-				060782B5250CE27700A87020 /* FeedViewController.swift */,
-				060782C5250CEB0A00A87020 /* InfoViewController.swift */,
-				760DDD402604D98400C4862C /* MainTabBarController.swift */,
-				060782C7250CEE5D00A87020 /* PostViewController.swift */,
 				060782B1250CE27700A87020 /* AppDelegate.swift */,
-				060782C9250CEE7200A87020 /* Post.swift */,
 				060782BA250CE27A00A87020 /* Assets.xcassets */,
 				060782BC250CE27A00A87020 /* LaunchScreen.storyboard */,
 				060782BF250CE27A00A87020 /* Info.plist */,
@@ -145,18 +154,56 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		76E56B6C25B18FC500BFEB19 /* Profile */ = {
+		767CDDDB2615E291003722A4 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				767CDDDC2615E501003722A4 /* Coordinator.swift */,
+				767CDDE02615E590003722A4 /* FeedCoordinator.swift */,
+				767CDDE42615E5F3003722A4 /* LoginCoordinator.swift */,
+				767CDDE82615E67D003722A4 /* MainCoordinator.swift */,
+				767CDDEC2615EC8C003722A4 /* ProfileCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		767CDDF02615F086003722A4 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				060782C9250CEE7200A87020 /* Post.swift */,
+				7667CEAC25D15A7A008932A8 /* PostContent.swift */,
+				7667CEB925DBF7CA008932A8 /* PhotoContent.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		767CDDF12615F0B5003722A4 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				76E5FE9E25C1B29900098D33 /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		767CDDF22615F35F003722A4 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				76E56B7525B1983100BFEB19 /* ProfileViewController.swift */,
+				060782B5250CE27700A87020 /* FeedViewController.swift */,
+				7667CEBC25DC1E1D008932A8 /* PhotosViewController.swift */,
+				060782C5250CEB0A00A87020 /* InfoViewController.swift */,
+				760DDD402604D98400C4862C /* MainTabBarController.swift */,
+				060782C7250CEE5D00A87020 /* PostViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		76E56B6C25B18FC500BFEB19 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
 				76E56B7225B197CB00BFEB19 /* ProfileHeaderView.swift */,
-				76E5FE9E25C1B29900098D33 /* LoginViewController.swift */,
 				7667CEAF25D1651C008932A8 /* ProfileTableViewCell.swift */,
 				7667CEB525DBC231008932A8 /* PhotosTableViewCell.swift */,
-				7667CEBC25DC1E1D008932A8 /* PhotosViewController.swift */,
 				7667CEC125DC3DEB008932A8 /* CustomCell.swift */,
-				7667CEAC25D15A7A008932A8 /* PostContent.swift */,
-				7667CEB925DBF7CA008932A8 /* PhotoContent.swift */,
 				76856A03260BA3C100698432 /* PersonView.swift */,
 			);
 			path = Profile;
@@ -344,6 +391,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7667CEBA25DBF7CA008932A8 /* PhotoContent.swift in Sources */,
+				767CDDED2615EC8C003722A4 /* ProfileCoordinator.swift in Sources */,
 				7667CEB625DBC232008932A8 /* PhotosTableViewCell.swift in Sources */,
 				76E5FE9F25C1B29900098D33 /* LoginViewController.swift in Sources */,
 				060782B6250CE27700A87020 /* FeedViewController.swift in Sources */,
@@ -353,12 +401,16 @@
 				060782CA250CEE7200A87020 /* Post.swift in Sources */,
 				7667CEAD25D15A7A008932A8 /* PostContent.swift in Sources */,
 				76E56B7325B197CB00BFEB19 /* ProfileHeaderView.swift in Sources */,
+				767CDDDD2615E501003722A4 /* Coordinator.swift in Sources */,
 				760DDD412604D98500C4862C /* MainTabBarController.swift in Sources */,
 				7667CEBD25DC1E1D008932A8 /* PhotosViewController.swift in Sources */,
+				767CDDE92615E67D003722A4 /* MainCoordinator.swift in Sources */,
 				76E56B7625B1983100BFEB19 /* ProfileViewController.swift in Sources */,
 				76856A04260BA3C100698432 /* PersonView.swift in Sources */,
 				060782C8250CEE5D00A87020 /* PostViewController.swift in Sources */,
+				767CDDE12615E590003722A4 /* FeedCoordinator.swift in Sources */,
 				7667CEC225DC3DEB008932A8 /* CustomCell.swift in Sources */,
+				767CDDE52615E5F3003722A4 /* LoginCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
