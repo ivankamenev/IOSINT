@@ -9,14 +9,14 @@
 import UIKit
 import SnapKit
 
-protocol LogInViewControllerDelegate: class {
+protocol LoginViewControllerDelegate: class {
     func validateLogin(_: String) -> Bool
     func validatePassword(_: String) -> Bool
 }
 
-class LogInViewController: UIViewController {
+class LoginViewController: UIViewController {
     
-    var delegate: LogInViewControllerDelegate?
+    var delegate: LoginViewControllerDelegate?
     
     let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
@@ -228,7 +228,7 @@ extension UIImage {
     }
 }
 
-class LoginValidator: LogInViewControllerDelegate {
+class LoginValidator: LoginViewControllerDelegate {
     
     func validateLogin(_ login: String) -> Bool {
         guard login == Checker.shared.login else { return true}
