@@ -10,6 +10,8 @@ import UIKit
 
 class ProfileViewController: UIViewController {
     
+    weak var coordinator: Coordinator?
+    
     let profile = ProfileHeaderView()
     
     let postTableView: UITableView = {
