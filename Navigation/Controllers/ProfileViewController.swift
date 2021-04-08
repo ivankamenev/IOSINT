@@ -10,6 +10,8 @@ import UIKit
 
 class ProfileViewController: UIViewController {
     
+    weak var coordinator: ProfileFlowCoordinator?
+    
     let profile = ProfileHeaderView()
     
     let postTableView: UITableView = {
@@ -106,7 +108,7 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard indexPath.section == 0 else { return }
-        navigationController?.pushViewController(PhotosViewController(), animated: true)
+        coordinator?.showPhotosVC()
     }
     
     

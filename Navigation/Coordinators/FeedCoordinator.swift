@@ -9,18 +9,30 @@
 import Foundation
 import UIKit
 
-class FeedCoordinator: Coordinator {
-    
-    var navigationController: UINavigationController?
-    var viewController: UIViewController
+protocol FeedFlowCoordinator: ChildCoordinator {
+    func showPostVC(post: Post)
+}
 
-    init() {
-        viewController = FeedViewController()
-        viewController.tabBarItem = UITabBarItem(title: "Feed", image: UIImage(named: "house"), tag: 0)
-        navigationController = UINavigationController(rootViewController: viewController)
+class FeedCoordinator: FeedFlowCoordinator {
+    var navigationController: UINavigationController
+
+    init(navigationController: UINavigationController) {
+        self.navigationController = navigationController
     }
 
     func start() {
+        let feedViewController = FeedViewController()
+        feedViewController.coordinator = self
+        feedViewController.tabBarItem = TabBarModel.items[.feed]
+
+        navigationController.pushViewController(feedViewController, animated: false)
     }
 
+    func showPostVC(post: Post) {
+        let postViewController = PostViewController()
+        postViewController.coordinator = self
+        postViewController.post = post
+
+        navigationController.pushViewController(postViewController, animated: true)
+    }
 }

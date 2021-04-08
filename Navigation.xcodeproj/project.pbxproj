@@ -16,6 +16,7 @@
 		060782CA250CEE7200A87020 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060782C9250CEE7200A87020 /* Post.swift */; };
 		550658104F3C393947B08283 /* Pods_Navigation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6B11DCE93DB355478D9BB63 /* Pods_Navigation.framework */; };
 		760DDD412604D98500C4862C /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760DDD402604D98400C4862C /* MainTabBarController.swift */; };
+		76453E25261F7A2400231824 /* TabBarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76453E24261F7A2400231824 /* TabBarModel.swift */; };
 		7667CEAD25D15A7A008932A8 /* PostContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7667CEAC25D15A7A008932A8 /* PostContent.swift */; };
 		7667CEB025D1651C008932A8 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7667CEAF25D1651C008932A8 /* ProfileTableViewCell.swift */; };
 		7667CEB625DBC232008932A8 /* PhotosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7667CEB525DBC231008932A8 /* PhotosTableViewCell.swift */; };
@@ -25,7 +26,7 @@
 		767CDDDD2615E501003722A4 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767CDDDC2615E501003722A4 /* Coordinator.swift */; };
 		767CDDE12615E590003722A4 /* FeedCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767CDDE02615E590003722A4 /* FeedCoordinator.swift */; };
 		767CDDE52615E5F3003722A4 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767CDDE42615E5F3003722A4 /* LoginCoordinator.swift */; };
-		767CDDE92615E67D003722A4 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767CDDE82615E67D003722A4 /* MainCoordinator.swift */; };
+		767CDDE92615E67D003722A4 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767CDDE82615E67D003722A4 /* AppCoordinator.swift */; };
 		767CDDED2615EC8C003722A4 /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767CDDEC2615EC8C003722A4 /* ProfileCoordinator.swift */; };
 		767F5B262604E57800775DBC /* PhotoContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7667CEB925DBF7CA008932A8 /* PhotoContent.swift */; };
 		767F5B272604E57800775DBC /* PhotosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7667CEB525DBC231008932A8 /* PhotosTableViewCell.swift */; };
@@ -66,6 +67,7 @@
 		143C18378548CC3C903B6CD9 /* Pods-Navigation copy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Navigation copy.release.xcconfig"; path = "Target Support Files/Pods-Navigation copy/Pods-Navigation copy.release.xcconfig"; sourceTree = "<group>"; };
 		3E761202C0136994FB2CBFB7 /* Pods-Navigation copy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Navigation copy.debug.xcconfig"; path = "Target Support Files/Pods-Navigation copy/Pods-Navigation copy.debug.xcconfig"; sourceTree = "<group>"; };
 		760DDD402604D98400C4862C /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		76453E24261F7A2400231824 /* TabBarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarModel.swift; sourceTree = "<group>"; };
 		7667CEAC25D15A7A008932A8 /* PostContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostContent.swift; sourceTree = "<group>"; };
 		7667CEAF25D1651C008932A8 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		7667CEB525DBC231008932A8 /* PhotosTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosTableViewCell.swift; sourceTree = "<group>"; };
@@ -75,7 +77,7 @@
 		767CDDDC2615E501003722A4 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		767CDDE02615E590003722A4 /* FeedCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCoordinator.swift; sourceTree = "<group>"; };
 		767CDDE42615E5F3003722A4 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
-		767CDDE82615E67D003722A4 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		767CDDE82615E67D003722A4 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		767CDDEC2615EC8C003722A4 /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
 		767F5B3C2604E57800775DBC /* Navigation copy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Navigation copy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		767F5B3D2604E57800775DBC /* Navigation copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Navigation copy-Info.plist"; path = "/Users/ivankamenev/Desktop/Swift/netology_classwork/UIIOS/Homework/Navigation 2/Navigation copy-Info.plist"; sourceTree = "<absolute>"; };
@@ -141,6 +143,7 @@
 				060782BA250CE27A00A87020 /* Assets.xcassets */,
 				060782BC250CE27A00A87020 /* LaunchScreen.storyboard */,
 				060782BF250CE27A00A87020 /* Info.plist */,
+				76453E24261F7A2400231824 /* TabBarModel.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -160,7 +163,7 @@
 				767CDDDC2615E501003722A4 /* Coordinator.swift */,
 				767CDDE02615E590003722A4 /* FeedCoordinator.swift */,
 				767CDDE42615E5F3003722A4 /* LoginCoordinator.swift */,
-				767CDDE82615E67D003722A4 /* MainCoordinator.swift */,
+				767CDDE82615E67D003722A4 /* AppCoordinator.swift */,
 				767CDDEC2615EC8C003722A4 /* ProfileCoordinator.swift */,
 			);
 			path = Coordinators;
@@ -401,10 +404,11 @@
 				060782CA250CEE7200A87020 /* Post.swift in Sources */,
 				7667CEAD25D15A7A008932A8 /* PostContent.swift in Sources */,
 				76E56B7325B197CB00BFEB19 /* ProfileHeaderView.swift in Sources */,
+				76453E25261F7A2400231824 /* TabBarModel.swift in Sources */,
 				767CDDDD2615E501003722A4 /* Coordinator.swift in Sources */,
 				760DDD412604D98500C4862C /* MainTabBarController.swift in Sources */,
 				7667CEBD25DC1E1D008932A8 /* PhotosViewController.swift in Sources */,
-				767CDDE92615E67D003722A4 /* MainCoordinator.swift in Sources */,
+				767CDDE92615E67D003722A4 /* AppCoordinator.swift in Sources */,
 				76E56B7625B1983100BFEB19 /* ProfileViewController.swift in Sources */,
 				76856A04260BA3C100698432 /* PersonView.swift in Sources */,
 				060782C8250CEE5D00A87020 /* PostViewController.swift in Sources */,

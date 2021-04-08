@@ -10,6 +10,8 @@ import UIKit
 
 class PhotosViewController: UIViewController {
     
+    weak var coordinator: ProfileFlowCoordinator?
+    
     private let photoCollectionImage: UICollectionView = {
         
         let layout = UICollectionViewFlowLayout()

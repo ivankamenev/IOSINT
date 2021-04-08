@@ -12,14 +12,16 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window:UIWindow?
-    var appCoordinator: MainCoordinator?
+    var appCoordinator: AppCoordinator?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        self.window = UIWindow(frame: UIScreen.main.bounds)
-//        window?.rootViewController = MainTabBarController()
-//        window?.makeKeyAndVisible()
-        appCoordinator = MainCoordinator(window: window!)
+        let feedCoordinator = FeedCoordinator(navigationController: UINavigationController())
+        let profileCoordinator = ProfileCoordinator(navigationController: UINavigationController())
+
+        appCoordinator = AppCoordinator(tabBarController: UITabBarController(), childCoordinators: [feedCoordinator, profileCoordinator])
         appCoordinator?.start()
+        window?.rootViewController = appCoordinator?.tabBarController
+        window?.makeKeyAndVisible()
         return true
         
     }

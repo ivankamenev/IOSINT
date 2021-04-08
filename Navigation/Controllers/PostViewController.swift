@@ -10,6 +10,7 @@ import UIKit
 
 class PostViewController: UIViewController {
     
+    weak var coordinator: FeedFlowCoordinator?
     var post: Post?
 
     override func viewDidLoad() {

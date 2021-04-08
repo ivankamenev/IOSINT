@@ -14,7 +14,8 @@ protocol LoginViewControllerDelegate: class {
 }
 
 class LoginViewController: UIViewController {
-
+    
+    weak var coordinator: ProfileFlowCoordinator?
     var delegate: LoginViewControllerDelegate?
 
     private let scrollView: UIScrollView = {
@@ -51,8 +52,7 @@ class LoginViewController: UIViewController {
 
     @objc func logInButtomTaped() {
         if loginCheck() {
-            let profileViewController = ProfileViewController()
-            show(profileViewController, sender: nil)
+            coordinator?.showProfileVC()
         } else {
             let alert = UIAlertController(title: "Error", message: "Wrong login or password", preferredStyle: .alert)
             let action = UIAlertAction(title: "OK", style: .default)
