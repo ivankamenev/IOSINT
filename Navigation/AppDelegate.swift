@@ -10,15 +10,22 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    
-    var window:UIWindow?
+    var window: UIWindow?
+    var mainCoordinator: MainCoordinator?
+    lazy var tabBarController = UITabBarController()
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication,
+                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+
+        mainCoordinator = AppCoordinator(tabBarController: tabBarController)
+
+        mainCoordinator?.start()
+
         self.window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = MainTabBarController()
+        window?.rootViewController = mainCoordinator?.tabBarController
         window?.makeKeyAndVisible()
         return true
-        
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
