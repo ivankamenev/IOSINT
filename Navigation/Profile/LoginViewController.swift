@@ -14,6 +14,8 @@ protocol LoginViewControllerDelegate: class {
 }
 
 class LoginViewController: UIViewController {
+    
+    var coordinator: ProfileCoordinator?
 
     var delegate: LoginViewControllerDelegate?
 
@@ -51,8 +53,7 @@ class LoginViewController: UIViewController {
 
     @objc func logInButtomTaped() {
         if loginCheck() {
-            let profileViewController = ProfileViewController()
-            show(profileViewController, sender: nil)
+            coordinator?.loginButtonPressed()
         } else {
             let alert = UIAlertController(title: "Error", message: "Wrong login or password", preferredStyle: .alert)
             let action = UIAlertAction(title: "OK", style: .default)

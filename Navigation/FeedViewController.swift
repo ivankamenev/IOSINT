@@ -9,25 +9,35 @@ import UIKit
 import SnapKit
 
 protocol FeedViewOutput {
-    func showPost(_:Post)
-    var navigationController: UINavigationController? { get set }
+    func showPost()
+    var coordinator: FeedCoordinator? { get set }
 }
 
     class FeedViewController: UIViewController {
+        
+        var coordinator: FeedCoordinator?
 
         var output: FeedViewOutput?
 
         lazy var containerView: UIView = {
             let container = ContainerView()
-            container.onTap = output?.showPost(_:)
+            container.onTap = output?.showPost
             return container
         }()
-
+        
+        init(output: FeedViewOutput) {
+            super.init(nibName: nil, bundle: nil)
+            self.output = output
+        }
+        
+        required init?(coder: NSCoder) {
+            fatalError("init(coder:) has not been implemented")
+        }
+        
         override func viewDidLoad() {
             super.viewDidLoad()
             view.backgroundColor = .green
             output = PostPresenter()
-            output?.navigationController = navigationController
             view.addSubview(containerView)
             setupConstraints()
             print(type(of: self), #function)
@@ -43,9 +53,7 @@ protocol FeedViewOutput {
     }
     class ContainerView: UIView {
 
-        let post: Post = Post(title: "Post")
-
-        var onTap: ((Post) -> Void)?
+        var onTap: (() -> Void)?
 
         let oneButton: UIButton = {
             let button = UIButton(type: .system)
@@ -88,8 +96,7 @@ protocol FeedViewOutput {
             }
 
         @objc private func buttonTap() {
-            guard onTap != nil else { return }
-            onTap!(post)
+            onTap!()
         }
 
         override init(frame: CGRect) {
@@ -104,11 +111,10 @@ protocol FeedViewOutput {
     }
 
         class PostPresenter: FeedViewOutput {
-            func showPost(_ post: Post) {
-                   let postViewController = PostViewController()
-                   postViewController.post = post
-                   navigationController?.pushViewController(postViewController, animated: true)
-               }
-            var navigationController: UINavigationController?
+            var coordinator: FeedCoordinator?
+                
+            func showPost() {
+                coordinator?.showPost()
 
             }
+        }

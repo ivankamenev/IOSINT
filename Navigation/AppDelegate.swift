@@ -11,14 +11,16 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
-    var window:UIWindow?
+    var window: UIWindow?
+    var coordinator: MainCoordinator?
+    lazy var tabController = UITabBarController()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        self.window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = MainTabBarController()
+        coordinator = MainCoordinator(navigationController: nil, tabBarController: tabController)
+        coordinator?.start()
+        window?.rootViewController = coordinator?.tabBarController
         window?.makeKeyAndVisible()
         return true
-        
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
