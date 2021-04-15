@@ -16,6 +16,7 @@
 		060782CA250CEE7200A87020 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060782C9250CEE7200A87020 /* Post.swift */; };
 		550658104F3C393947B08283 /* Pods_Navigation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6B11DCE93DB355478D9BB63 /* Pods_Navigation.framework */; };
 		760DDD412604D98500C4862C /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760DDD402604D98400C4862C /* MainTabBarController.swift */; };
+		76453DEE26162D5C00231824 /* BrutForse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76453DED26162D5C00231824 /* BrutForse.swift */; };
 		7667CEAD25D15A7A008932A8 /* PostContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7667CEAC25D15A7A008932A8 /* PostContent.swift */; };
 		7667CEB025D1651C008932A8 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7667CEAF25D1651C008932A8 /* ProfileTableViewCell.swift */; };
 		7667CEB625DBC232008932A8 /* PhotosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7667CEB525DBC231008932A8 /* PhotosTableViewCell.swift */; };
@@ -66,6 +67,7 @@
 		143C18378548CC3C903B6CD9 /* Pods-Navigation copy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Navigation copy.release.xcconfig"; path = "Target Support Files/Pods-Navigation copy/Pods-Navigation copy.release.xcconfig"; sourceTree = "<group>"; };
 		3E761202C0136994FB2CBFB7 /* Pods-Navigation copy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Navigation copy.debug.xcconfig"; path = "Target Support Files/Pods-Navigation copy/Pods-Navigation copy.debug.xcconfig"; sourceTree = "<group>"; };
 		760DDD402604D98400C4862C /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		76453DED26162D5C00231824 /* BrutForse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrutForse.swift; sourceTree = "<group>"; };
 		7667CEAC25D15A7A008932A8 /* PostContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostContent.swift; sourceTree = "<group>"; };
 		7667CEAF25D1651C008932A8 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		7667CEB525DBC231008932A8 /* PhotosTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosTableViewCell.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				76E5FE9E25C1B29900098D33 /* LoginViewController.swift */,
+				76453DED26162D5C00231824 /* BrutForse.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -392,6 +395,7 @@
 			files = (
 				7667CEBA25DBF7CA008932A8 /* PhotoContent.swift in Sources */,
 				767CDDED2615EC8C003722A4 /* ProfileCoordinator.swift in Sources */,
+				76453DEE26162D5C00231824 /* BrutForse.swift in Sources */,
 				7667CEB625DBC232008932A8 /* PhotosTableViewCell.swift in Sources */,
 				76E5FE9F25C1B29900098D33 /* LoginViewController.swift in Sources */,
 				060782B6250CE27700A87020 /* FeedViewController.swift in Sources */,
@@ -501,7 +505,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -556,7 +560,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -574,7 +578,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Navigation/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -594,7 +598,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 97RMPGAK3X;
 				INFOPLIST_FILE = Navigation/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -614,7 +618,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Navigation copy-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -634,7 +638,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 97RMPGAK3X;
 				INFOPLIST_FILE = "Navigation copy-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

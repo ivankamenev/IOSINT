@@ -13,12 +13,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window:UIWindow?
     var appCoordinator: MainCoordinator?
+    var vc = MainTabBarController()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         self.window = UIWindow(frame: UIScreen.main.bounds)
 //        window?.rootViewController = MainTabBarController()
 //        window?.makeKeyAndVisible()
-        appCoordinator = MainCoordinator(window: window!)
+        appCoordinator = MainCoordinator(window: window!, vc: vc)
         appCoordinator?.start()
         return true
         
@@ -37,7 +38,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
-//  2021-03-19 17:19:27.642792+0300 Navigation[77732:15176277] [BackgroundTask] Background Task 3 ("Called by Navigation, from $s10Navigation18FeedViewControllerC14viewWillAppearyySbF"), was created over 30 seconds ago. In applications running in the background, this creates a risk of termination. Remember to call UIApplication.endBackgroundTask(_:) for your task in a timely manner to avoid this.
         print(type(of: self), #function)
     }
 

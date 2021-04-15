@@ -11,11 +11,13 @@ import UIKit
 
 class MainCoordinator: Coordinator  {
 
-    var viewController: UIViewController = MainTabBarController()
+    var rootViewController: UIViewController
     var navigationController: UINavigationController?
 
-    init(window: UIWindow) {
-        window.rootViewController = viewController
+    init(window: UIWindow, vc: UIViewController) {
+        rootViewController = vc
+        navigationController = rootViewController.navigationController
+        window.rootViewController = rootViewController
         window.makeKeyAndVisible()
     }
 
