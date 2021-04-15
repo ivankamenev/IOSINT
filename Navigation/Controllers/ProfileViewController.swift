@@ -14,6 +14,14 @@ class ProfileViewController: UIViewController {
     
     let profile = ProfileHeaderView()
     
+    private var timerCount = 45
+
+    private let timerLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
     let postTableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -26,11 +34,26 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let timer = Timer(timeInterval: 1, repeats: true) { (_) in
+            self.timerCount -= 1
+            self.timerLabel.text = "\(self.timerCount)"
+        }
+
+        let timerToPop = Timer.scheduledTimer(timeInterval: 30,
+                                              target: self,
+                                              selector: #selector(popToLoginViewController),
+                                              userInfo: nil,
+                                              repeats: true)
+
+        RunLoop.main.add(timer, forMode: .common)
+        RunLoop.main.add(timerToPop, forMode: .common)
+        
         postTableView.delegate = self
         postTableView.dataSource = self
                 
         self.view.backgroundColor = .lightGray
         view.addSubview(postTableView)
+        view.addSubview(timerLabel)
         self.navigationController?.navigationBar.isHidden = false
         self.navigationItem.title = "Profile"
         
@@ -41,10 +64,18 @@ class ProfileViewController: UIViewController {
             postTableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             postTableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             
+            timerLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
+                        timerLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16)
+            
         ]
         
         NSLayoutConstraint.activate(costraints)
     }
+    
+    @objc private func popToLoginViewController() {
+        navigationController?.popToRootViewController(animated: true)
+    }
+
 
     
 }
