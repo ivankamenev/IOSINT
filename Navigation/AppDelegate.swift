@@ -7,22 +7,16 @@
 //
 
 import UIKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    var window: UIWindow?
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        let appConfig = AppConfiguration.random(people: URL(string: "https://swapi.dev/api/people/8")!, starships: URL(string: "https://swapi.dev/api/starships/3")!, planet: URL(string: "https://swapi.dev/api/planets/5")!)
-        
-        switch appConfig {
-        case .people(let people):
-            NetworkService.dataTask(url: people)
-        case .starships(let starsip):
-            NetworkService.dataTask(url: starsip)
-        case .planets(let planet):
-            NetworkService.dataTask(url: planet)
-        }
+        FirebaseApp.configure()
         return true
     }
 

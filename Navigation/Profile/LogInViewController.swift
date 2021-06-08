@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
 
 class LogInViewController: UIViewController {
     
@@ -14,6 +16,7 @@ class LogInViewController: UIViewController {
     private let scrollView = UIScrollView()
     private let wrapperView = UIView()
     var delegate: LoginViewControllerDelegate?
+    var handle: AuthStateDidChangeListenerHandle?
     
     var count = 0
     let timerLabel: UILabel = {
@@ -140,7 +143,22 @@ class LogInViewController: UIViewController {
         
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        handle = Auth.auth().addStateDidChangeListener { (auth, user) in
+                    print("USERS EMAIL: \(user?.email)")
+
+                    if user != nil {
+                        self.coordinator?.loginButtonPressed()
+                    }
+                }
+            }
+
+            override func viewWillDisappear(_ animated: Bool) {
+                super.viewWillDisappear(animated)
+                Auth.auth().removeStateDidChangeListener(handle!)
     }
+    
+    
     
     // MARK: Keyboard actions
     @objc fileprivate func keyboardWillShow(notification: NSNotification) {
@@ -157,22 +175,7 @@ class LogInViewController: UIViewController {
     }
     
     @objc private func loginButtonPressed() {
-        checkLogin { result in
-            switch result {
-            case .success(let action):
-                if let mAction = action {
-                    mAction()
-                }
-            case .failure(.incorrectLogin):
-                coordinator?.showAlert(error: .incorrectLogin)
-            case .failure(.incorrectPass):
-                coordinator?.showAlert(error: .incorrectPass)
-            case .failure(.loginIsEmpty):
-                coordinator?.showAlert(error: .loginIsEmpty)
-            case .failure(.passIsEmpty):
-                coordinator?.showAlert(error: .passIsEmpty)
-            }
-        }
+        delegate?.signIn(email: emailTextField.text!, pass: passwordTextField.text!, failure: coordinator!.showAlert)
     }
     
     @objc private func pickUpPass() {
@@ -184,23 +187,6 @@ class LogInViewController: UIViewController {
         operationQueue.addOperation(operation)
     }
     
-    private func checkLogin(completion: (Result<(() -> Void)?, Errors>) -> Void) {
-        if emailTextField.text == "" || emailTextField.text == nil {
-            completion(.failure(.loginIsEmpty))
-        }
-        
-        if passwordTextField.text == "" || passwordTextField.text == nil {
-            completion(.failure(.passIsEmpty))
-        }
-        
-        if ((delegate?.checkLogin(userLogin: emailTextField.text!))! && (delegate?.checkPass(userPass: passwordTextField.text!))!) {
-            completion(.success(coordinator?.loginButtonPressed))
-        } else if !(delegate?.checkLogin(userLogin: emailTextField.text!))! {
-            completion(.failure(.incorrectLogin))
-        } else if !(delegate?.checkPass(userPass: passwordTextField.text!))! {
-            completion(.failure(.incorrectPass))
-        }
-    }
     
     private func setupViews() {
         scrollView.translatesAutoresizingMaskIntoConstraints = false
@@ -280,6 +266,7 @@ class LogInViewController: UIViewController {
 protocol LoginViewControllerDelegate {
     func checkLogin(userLogin: String) -> Bool
     func checkPass(userPass: String) -> Bool
+    func signIn(email: String, pass: String, failure: @escaping (Errors) -> Void)
 }
 
 extension UIView {

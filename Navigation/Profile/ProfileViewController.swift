@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class ProfileViewController: UIViewController {
     
-    weak var coordinator: ProfileCoordinator?
+    var coordinator: ProfileCoordinator?
     let posts = [Post(author: "Joaquin Phoenix",
                       description: "I'm new Joker",
                       image: "image 1",
@@ -40,12 +41,22 @@ class ProfileViewController: UIViewController {
     private lazy var tableHeader = ProfileTableHederView()
     private lazy var image = UIImageView()
     
+    private lazy var exitButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .red
+        button.setImage(UIImage(systemName: "clear"), for: .normal)
+        button.layer.cornerRadius = 24/2
+        button.layer.masksToBounds = true
+        button.clipsToBounds = true
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(exitButtonPressed), for: .touchUpInside)
+        return button
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
         setupViews()
-        
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -54,13 +65,19 @@ class ProfileViewController: UIViewController {
     
     private func setupViews() {
         view.addSubview(tableView)
+        view.addSubview(exitButton)
         view.backgroundColor = .white
         
         let constraints = [
             tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
+            tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            
+            exitButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 5),
+            exitButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -5),
+            exitButton.widthAnchor.constraint(equalToConstant: 24),
+            exitButton.heightAnchor.constraint(equalToConstant: 24)
         ]
         
         NSLayoutConstraint.activate(constraints)
@@ -83,6 +100,12 @@ class ProfileViewController: UIViewController {
             forHeaderFooterViewReuseIdentifier: String(describing: ProfileTableHederView.self)
         )
     }
+    
+    @objc private func exitButtonPressed() {
+        try! Auth.auth().signOut()
+        coordinator?.closeButtonPressed()
+    }
+
     
     @objc func avatarTap(gestureRecognizer: UITapGestureRecognizer) {
         print("tapped")
