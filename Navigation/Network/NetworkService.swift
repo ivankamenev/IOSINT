@@ -21,10 +21,7 @@ struct NetworkService {
             }
             
             guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else { return }
-            
-            print("allHeadersFields: \(httpResponse.allHeaderFields as! [String: Any])")
-            print("statusCode: \(httpResponse.statusCode)")
-            print("data: \(String(data: data!, encoding: .utf8))")
+
         }
         
         task.resume()

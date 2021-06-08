@@ -24,30 +24,31 @@ class ProfileCoordinator: Coordinator {
         navigationController?.pushViewController(profile, animated: true)
     }
     
+    func closeButtonPressed() {
+           navigationController?.popViewController(animated: true)
+    }
+    
     func photosSelected() {
         let photosViewController = PhotosViewController()
         navigationController?.pushViewController(photosViewController, animated: true)
     }
     
     func showAlert(error: Errors) {
-        var alertMessage = ""
-        
-        switch error {
-        case .loginIsEmpty:
-            alertMessage = "Введите логин"
-        case .passIsEmpty:
-            alertMessage = "Введите пароль"
-        case .incorrectLogin:
-            alertMessage = "Введён неверный логин"
-        case .incorrectPass:
-            alertMessage = "Введён неверный пароль"
+        func showAlert(error: Errors) {
+                var message = ""
+                switch error {
+                case .incorrectData:
+                    message = "Введены неверные данные. Проверьте введённые данные"
+                case .shortPassword:
+                    message = "Пароль должен содержать минимум 6 символов"
+                case .incorrectEmail:
+                    message = "Логин не соответсвует адресу почты"
+                }
+
+                let alertController = UIAlertController(title: "Ошибка!", message: message, preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+                    print("OK")
+                }
         }
-        
-        let alertController = UIAlertController(title: "Ошибка!", message: alertMessage, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
-            print("OK")
-        }
-        alertController.addAction(okAction)
-        navigationController?.present(alertController, animated: true, completion: nil)
     }
 }
