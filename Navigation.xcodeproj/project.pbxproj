@@ -20,6 +20,7 @@
 		765012832667E49B000B3BC8 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765012822667E49B000B3BC8 /* AppConfiguration.swift */; };
 		76501324266FE025000B3BC8 /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76501323266FE025000B3BC8 /* Planet.swift */; };
 		76501327266FE3D4000B3BC8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 76501326266FE3D4000B3BC8 /* GoogleService-Info.plist */; };
+		76A48EDE268499A800BA40BD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A48EDD268499A800BA40BD /* User.swift */; };
 		87142DDC261C8CBD00CB696B /* Checker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87142DDB261C8CBD00CB696B /* Checker.swift */; };
 		87142DDF261C8E8300CB696B /* LoginInspector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87142DDE261C8E8300CB696B /* LoginInspector.swift */; };
 		87142DE2261C93DA00CB696B /* PostPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87142DE1261C93DA00CB696B /* PostPresenter.swift */; };
@@ -59,6 +60,7 @@
 		765012822667E49B000B3BC8 /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
 		76501323266FE025000B3BC8 /* Planet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planet.swift; sourceTree = "<group>"; };
 		76501326266FE3D4000B3BC8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		76A48EDD268499A800BA40BD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		87142DDB261C8CBD00CB696B /* Checker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checker.swift; sourceTree = "<group>"; };
 		87142DDE261C8E8300CB696B /* LoginInspector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInspector.swift; sourceTree = "<group>"; };
 		87142DE1261C93DA00CB696B /* PostPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostPresenter.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 				87142DF8262DF1EC00CB696B /* Errors.swift */,
 				765012822667E49B000B3BC8 /* AppConfiguration.swift */,
 				76501323266FE025000B3BC8 /* Planet.swift */,
+				76A48EDD268499A800BA40BD /* User.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 				87BBE20725C04F33000ED8CC /* LogInViewController.swift in Sources */,
 				87142DEB2624517200CB696B /* Coordinator.swift in Sources */,
 				87F0E3A925CAD1FE00A275C0 /* Photos.swift in Sources */,
+				76A48EDE268499A800BA40BD /* User.swift in Sources */,
 				87B3F84C25C1955C003A03E9 /* ProfileView.swift in Sources */,
 				060782C6250CEB0A00A87020 /* InfoViewController.swift in Sources */,
 				060782CA250CEE7200A87020 /* Post.swift in Sources */,
