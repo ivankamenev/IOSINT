@@ -14,7 +14,6 @@ class LogInViewController: UIViewController {
     private let scrollView = UIScrollView()
     private let wrapperView = UIView()
     var delegate: LoginViewControllerDelegate?
-
     
     var count = 0
     let timerLabel: UILabel = {
@@ -134,6 +133,11 @@ class LogInViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        let users = delegate?.checkUsers()
+        if users != nil && !users!.isEmpty {
+            coordinator?.loginButtonPressed()
+        }
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -141,15 +145,7 @@ class LogInViewController: UIViewController {
         
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
-        
-        let users = delegate?.checkUsers()
-        if users != nil && !users!.isEmpty {
-            coordinator?.loginButtonPressed()
-        }
-        
-            }
-
-    
+    }
     
     // MARK: Keyboard actions
     @objc fileprivate func keyboardWillShow(notification: NSNotification) {
@@ -167,8 +163,8 @@ class LogInViewController: UIViewController {
     
     @objc private func loginButtonPressed() {
         if delegate!.creteUser(id: UUID().uuidString, email: emailTextField.text, pass: passwordTextField.text, failure: coordinator!.showAlert) {
-                   coordinator?.loginButtonPressed()
-               }
+            coordinator?.loginButtonPressed()
+        }
     }
     
     @objc private func pickUpPass() {
@@ -179,7 +175,6 @@ class LogInViewController: UIViewController {
         let operation = BruteForceOperation(passField: passwordTextField, spinner: spinner)
         operationQueue.addOperation(operation)
     }
-    
     
     private func setupViews() {
         scrollView.translatesAutoresizingMaskIntoConstraints = false
