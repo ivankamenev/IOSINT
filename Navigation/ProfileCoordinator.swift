@@ -12,14 +12,16 @@ import UIKit
 class ProfileCoordinator: Coordinator {
     var tabBarController: UITabBarController?
     var navigationController: UINavigationController?
+    private let stack: CoreDataStack
     
-    init(navigationController: UINavigationController, tabBarController: UITabBarController?) {
+    init(navigationController: UINavigationController, tabBarController: UITabBarController?, stack: CoreDataStack) {
         self.navigationController = navigationController
         self.tabBarController = tabBarController
+        self.stack = stack
     }
     
     func loginButtonPressed() {
-        let profile = ProfileViewController()
+        let profile = ProfileViewController(stack: stack)
         profile.coordinator = self
         navigationController?.pushViewController(profile, animated: true)
     }

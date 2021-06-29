@@ -11,6 +11,8 @@ import FirebaseAuth
 
 class ProfileViewController: UIViewController {
     
+    private let stack: CoreDataStack
+    
     var coordinator: ProfileCoordinator?
     let posts = [Post(author: "Joaquin Phoenix",
                       description: "I'm new Joker",
@@ -40,6 +42,16 @@ class ProfileViewController: UIViewController {
     private lazy var header = ProfileHeaderView()
     private lazy var tableHeader = ProfileTableHederView()
     private lazy var image = UIImageView()
+    
+    init(stack: CoreDataStack) {
+        self.stack = stack
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     
     private lazy var exitButton: UIButton = {
         let button = UIButton()
@@ -204,6 +216,7 @@ extension ProfileViewController: UITableViewDataSource {
         } else {
             let cell: PostTableViewCell = tableView.dequeueReusableCell(withIdentifier: String(describing: PostTableViewCell.self), for: indexPath) as! PostTableViewCell
             cell.post = posts[indexPath.row]
+            cell.delegate = self
             return cell
         }
     }
@@ -249,4 +262,15 @@ extension ProfileViewController: UITableViewDelegate {
         }
     }
 
+}
+
+
+extension ProfileViewController: PostTableCellDelegate {
+    func savePost(post: Post) {
+        stack.createNewTask(author: post.author, description: post.description, image: post.image, likes: post.likes, views: post.views)
+    }
+}
+
+protocol PostTableCellDelegate: AnyObject {
+    func savePost(post: Post)
 }

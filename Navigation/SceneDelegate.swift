@@ -12,6 +12,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
     
+    private(set) lazy var coreDataStack = CoreDataStack()
+    
     var coordinator: MainCoordinator?
 
 
@@ -23,7 +25,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let tabController = UITabBarController()
 
-        coordinator = MainCoordinator(navigationController: nil, tabBarController: tabController)
+        coordinator = MainCoordinator(navigationController: nil, tabBarController: tabController, stack: coreDataStack)
         coordinator?.start()
 
         window?.rootViewController = tabController
@@ -56,6 +58,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Called as the scene transitions from the foreground to the background.
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
+    }
+    
+    // MARK: - Core Data Saving support
+    func saveContext () {
+        let context = coreDataStack.persistentContainer.viewContext
+        if context.hasChanges {
+            do {
+                try context.save()
+            } catch {
+                // Replace this implementation with code to handle the error appropriately.
+                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                let nserror = error as NSError
+                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+            }
+        }
     }
 
 
