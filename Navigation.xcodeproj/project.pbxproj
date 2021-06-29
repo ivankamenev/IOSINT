@@ -21,6 +21,12 @@
 		76501324266FE025000B3BC8 /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76501323266FE025000B3BC8 /* Planet.swift */; };
 		76501327266FE3D4000B3BC8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 76501326266FE3D4000B3BC8 /* GoogleService-Info.plist */; };
 		76D11BD32689976800FCD604 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D11BD22689976800FCD604 /* User.swift */; };
+		76D11C8B268B2BA700FCD604 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D11C88268B2BA700FCD604 /* CoreDataStack.swift */; };
+		76D11C8C268B2BA700FCD604 /* Navigation.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 76D11C89268B2BA700FCD604 /* Navigation.xcdatamodeld */; };
+		76D11C8E268B2BC700FCD604 /* Task+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D11C8D268B2BC700FCD604 /* Task+CoreDataClass.swift */; };
+		76D11C90268B2BD200FCD604 /* Task+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D11C8F268B2BD200FCD604 /* Task+CoreDataProperties.swift */; };
+		76D11C93268B348500FCD604 /* LikesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D11C92268B348500FCD604 /* LikesTableViewCell.swift */; };
+		76D11C95268B34AC00FCD604 /* LikesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D11C94268B34AC00FCD604 /* LikesViewController.swift */; };
 		87142DDC261C8CBD00CB696B /* Checker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87142DDB261C8CBD00CB696B /* Checker.swift */; };
 		87142DDF261C8E8300CB696B /* LoginInspector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87142DDE261C8E8300CB696B /* LoginInspector.swift */; };
 		87142DE2261C93DA00CB696B /* PostPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87142DE1261C93DA00CB696B /* PostPresenter.swift */; };
@@ -61,6 +67,12 @@
 		76501323266FE025000B3BC8 /* Planet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planet.swift; sourceTree = "<group>"; };
 		76501326266FE3D4000B3BC8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		76D11BD22689976800FCD604 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		76D11C88268B2BA700FCD604 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		76D11C8A268B2BA700FCD604 /* Navigation.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Navigation.xcdatamodel; sourceTree = "<group>"; };
+		76D11C8D268B2BC700FCD604 /* Task+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataClass.swift"; sourceTree = "<group>"; };
+		76D11C8F268B2BD200FCD604 /* Task+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		76D11C92268B348500FCD604 /* LikesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikesTableViewCell.swift; sourceTree = "<group>"; };
+		76D11C94268B34AC00FCD604 /* LikesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikesViewController.swift; sourceTree = "<group>"; };
 		87142DDB261C8CBD00CB696B /* Checker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checker.swift; sourceTree = "<group>"; };
 		87142DDE261C8E8300CB696B /* LoginInspector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInspector.swift; sourceTree = "<group>"; };
 		87142DE1261C93DA00CB696B /* PostPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostPresenter.swift; sourceTree = "<group>"; };
@@ -102,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				76D11BD22689976800FCD604 /* User.swift */,
+				76D11C87268B2BA700FCD604 /* CoreData */,
 				060782B0250CE27700A87020 /* Navigation */,
 				060782AF250CE27700A87020 /* Products */,
 				94EA51C790DC87F1456C53B3 /* Pods */,
@@ -120,6 +133,7 @@
 		060782B0250CE27700A87020 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
+				76D11C91268B345400FCD604 /* LikesElement */,
 				7650127E2667D93A000B3BC8 /* Network */,
 				8744562C25B32EEB002565D0 /* Profile */,
 				060782B1250CE27700A87020 /* AppDelegate.swift */,
@@ -163,6 +177,26 @@
 				7650127F2667DAC3000B3BC8 /* NetworkService.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		76D11C87268B2BA700FCD604 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				76D11C8D268B2BC700FCD604 /* Task+CoreDataClass.swift */,
+				76D11C8F268B2BD200FCD604 /* Task+CoreDataProperties.swift */,
+				76D11C88268B2BA700FCD604 /* CoreDataStack.swift */,
+				76D11C89268B2BA700FCD604 /* Navigation.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		76D11C91268B345400FCD604 /* LikesElement */ = {
+			isa = PBXGroup;
+			children = (
+				76D11C92268B348500FCD604 /* LikesTableViewCell.swift */,
+				76D11C94268B34AC00FCD604 /* LikesViewController.swift */,
+			);
+			path = LikesElement;
 			sourceTree = "<group>";
 		};
 		8744562C25B32EEB002565D0 /* Profile */ = {
@@ -316,7 +350,10 @@
 				87BBE20725C04F33000ED8CC /* LogInViewController.swift in Sources */,
 				87142DEB2624517200CB696B /* Coordinator.swift in Sources */,
 				87F0E3A925CAD1FE00A275C0 /* Photos.swift in Sources */,
+				76D11C8B268B2BA700FCD604 /* CoreDataStack.swift in Sources */,
+				76D11C90268B2BD200FCD604 /* Task+CoreDataProperties.swift in Sources */,
 				87B3F84C25C1955C003A03E9 /* ProfileView.swift in Sources */,
+				76D11C93268B348500FCD604 /* LikesTableViewCell.swift in Sources */,
 				060782C6250CEB0A00A87020 /* InfoViewController.swift in Sources */,
 				060782CA250CEE7200A87020 /* Post.swift in Sources */,
 				87142DDC261C8CBD00CB696B /* Checker.swift in Sources */,
@@ -325,7 +362,9 @@
 				87142DEE26245FCD00CB696B /* ProfileCoordinator.swift in Sources */,
 				8744562E25B32F1F002565D0 /* ProfileHeaderView.swift in Sources */,
 				060782B4250CE27700A87020 /* SceneDelegate.swift in Sources */,
+				76D11C8E268B2BC700FCD604 /* Task+CoreDataClass.swift in Sources */,
 				87142DF12624692E00CB696B /* FeedCoordinator.swift in Sources */,
+				76D11C95268B34AC00FCD604 /* LikesViewController.swift in Sources */,
 				87F0E3A025CAAB7B00A275C0 /* PhotosTableViewCell.swift in Sources */,
 				87142DE2261C93DA00CB696B /* PostPresenter.swift in Sources */,
 				87142DF626271E9F00CB696B /* BruteForceOperations.swift in Sources */,
@@ -337,6 +376,7 @@
 				76501324266FE025000B3BC8 /* Planet.swift in Sources */,
 				765012832667E49B000B3BC8 /* AppConfiguration.swift in Sources */,
 				060782C8250CEE5D00A87020 /* PostViewController.swift in Sources */,
+				76D11C8C268B2BA700FCD604 /* Navigation.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -540,6 +580,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		76D11C89268B2BA700FCD604 /* Navigation.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				76D11C8A268B2BA700FCD604 /* Navigation.xcdatamodel */,
+			);
+			currentVersion = 76D11C8A268B2BA700FCD604 /* Navigation.xcdatamodel */;
+			path = Navigation.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 060782A6250CE27700A87020 /* Project object */;
 }
