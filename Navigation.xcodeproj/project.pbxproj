@@ -20,6 +20,7 @@
 		765012832667E49B000B3BC8 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765012822667E49B000B3BC8 /* AppConfiguration.swift */; };
 		76501324266FE025000B3BC8 /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76501323266FE025000B3BC8 /* Planet.swift */; };
 		76501327266FE3D4000B3BC8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 76501326266FE3D4000B3BC8 /* GoogleService-Info.plist */; };
+		76D11BD32689976800FCD604 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D11BD22689976800FCD604 /* User.swift */; };
 		87142DDC261C8CBD00CB696B /* Checker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87142DDB261C8CBD00CB696B /* Checker.swift */; };
 		87142DDF261C8E8300CB696B /* LoginInspector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87142DDE261C8E8300CB696B /* LoginInspector.swift */; };
 		87142DE2261C93DA00CB696B /* PostPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87142DE1261C93DA00CB696B /* PostPresenter.swift */; };
@@ -59,6 +60,7 @@
 		765012822667E49B000B3BC8 /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
 		76501323266FE025000B3BC8 /* Planet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planet.swift; sourceTree = "<group>"; };
 		76501326266FE3D4000B3BC8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		76D11BD22689976800FCD604 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		87142DDB261C8CBD00CB696B /* Checker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checker.swift; sourceTree = "<group>"; };
 		87142DDE261C8E8300CB696B /* LoginInspector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInspector.swift; sourceTree = "<group>"; };
 		87142DE1261C93DA00CB696B /* PostPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostPresenter.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 		060782A5250CE27700A87020 = {
 			isa = PBXGroup;
 			children = (
+				76D11BD22689976800FCD604 /* User.swift */,
 				060782B0250CE27700A87020 /* Navigation */,
 				060782AF250CE27700A87020 /* Products */,
 				94EA51C790DC87F1456C53B3 /* Pods */,
@@ -308,6 +311,7 @@
 				87142DE82624512100CB696B /* MainCoordinator.swift in Sources */,
 				060782B6250CE27700A87020 /* FeedViewController.swift in Sources */,
 				87B3F84825C180EE003A03E9 /* ProfileTableHederView.swift in Sources */,
+				76D11BD32689976800FCD604 /* User.swift in Sources */,
 				060782B2250CE27700A87020 /* AppDelegate.swift in Sources */,
 				87BBE20725C04F33000ED8CC /* LogInViewController.swift in Sources */,
 				87142DEB2624517200CB696B /* Coordinator.swift in Sources */,
