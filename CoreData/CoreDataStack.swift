@@ -53,6 +53,19 @@ class CoreDataStack {
         }
     }
     
+    func fetchTasksWithPredicate(value: String) -> [PostEntity] {
+        let request: NSFetchRequest<PostEntity> = PostEntity.fetchRequest()
+        let predicate = NSPredicate(format: "%K LIKE %@", #keyPath(PostEntity.author), value)
+        request.predicate = predicate
+        do {
+            return try viewContext.fetch(request)
+        } catch {
+            fatalError("🤷‍♂️ Что-то пошло не так..")
+        }
+    }
+
+
+    
     func remove(task: PostEntity) {
         viewContext.delete(task)
         
@@ -60,15 +73,16 @@ class CoreDataStack {
     }
     
     func createNewTask(author: String, description: String, image: String, likes: Int, views: Int) {
-        let newPost = PostEntity(context: viewContext)
-         newPost.id = UUID()
-         newPost.author = author
-         newPost.descript = description
-         newPost.image = image
-         newPost.likes = Int64(likes)
-         newPost.views = Int64(views)
+        let context = newBackgroundContext()
+        let newPost = PostEntity(context: context)
+        newPost.id = UUID()
+        newPost.author = author
+        newPost.descript = description
+        newPost.image = image
+        newPost.likes = Int64(likes)
+        newPost.views = Int64(views)
         
-        save(context: viewContext)
+        save(context: context)
     }
     
     private func save(context: NSManagedObjectContext) {
