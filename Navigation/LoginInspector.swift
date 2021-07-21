@@ -54,7 +54,14 @@ class LoginInspector: LoginViewControllerDelegate {
     }
     
     private var realm: Realm? {
-        return try? Realm()
+        var key = Data(count: 64)
+        _ = key.withUnsafeMutableBytes { (pointers: UnsafeMutableRawBufferPointer) in
+            SecRandomCopyBytes(kSecRandomDefault, 64, pointers.baseAddress!)
+
+        }
+        let config = Realm.Configuration(encryptionKey: key)
+
+        return try? Realm(configuration: config)
     }
     
     func checkLogin(userLogin: String) -> Bool {
