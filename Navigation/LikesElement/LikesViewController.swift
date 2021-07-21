@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class LikesViewController: UIViewController {
     
@@ -15,6 +16,20 @@ class LikesViewController: UIViewController {
     private let tableView = UITableView(frame: .zero, style: .plain)
     private var tasks: [PostEntity] = []
     private let likesCellID = String(describing: LikesTableViewCell.self)
+    private var isInitiallyLoaded: Bool = false
+
+    private lazy var fetchResultsController: NSFetchedResultsController<PostEntity> = {
+        let request: NSFetchRequest<PostEntity> = PostEntity.fetchRequest()
+        request.sortDescriptors = [NSSortDescriptor(key: "author", ascending: false)]
+        let controller = NSFetchedResultsController(
+        fetchRequest: request,
+        managedObjectContext: stack.viewContext,
+        sectionNameKeyPath: nil,
+        cacheName: nil
+       )
+        controller.delegate = self
+        return controller
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +41,12 @@ class LikesViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        reloadTasks()
+        if !isInitiallyLoaded {
+            isInitiallyLoaded = true
+            stack.viewContext.perform {
+                self.performFetch()
+            }
+        }
     }
     
     init(stack: CoreDataStack) {
@@ -71,13 +91,23 @@ class LikesViewController: UIViewController {
     }
     
     private func reloadTasks() {
-        tasks = stack.fetchTasks()
-        tableView.reloadData()
+        fetchResultsController.fetchRequest.predicate = nil
+        performFetch()
     }
     
     private func reloadTasksWithPredicate(predicate: String) {
-        tasks = stack.fetchTasksWithPredicate(value: predicate)
-        tableView.reloadData()
+        let predicate = NSPredicate(format: "%K LIKE %@", #keyPath(PostEntity.author), predicate)
+        fetchResultsController.fetchRequest.predicate = predicate
+        performFetch()
+    }
+
+    private func performFetch() {
+        do {
+            try self.fetchResultsController.performFetch()
+            self.tableView.reloadData()
+        } catch {
+            print(error)
+        }
     }
     
     @objc private func showPopup() {
@@ -107,12 +137,12 @@ extension LikesViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tasks.count
+        return fetchResultsController.fetchedObjects?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: LikesTableViewCell = tableView.dequeueReusableCell(withIdentifier: String(describing: likesCellID), for: indexPath) as! LikesTableViewCell
-        cell.post = tasks[indexPath.row]
+        cell.post = fetchResultsController.object(at: indexPath)
         return cell
     }
 }
@@ -123,15 +153,56 @@ extension LikesViewController: UITableViewDelegate {
         let action = UIContextualAction(style: .destructive, title: "Удалить") { [weak self] (_, _, callback) in
             guard let self = self else { return }
             
-            let task = self.tasks.remove(at: indexPath.row)
-            self.tableView.performBatchUpdates {
-                self.tableView.deleteRows(at: [indexPath], with: .automatic)
-            } completion: { (_) in
-                self.stack.remove(task: task)
-            }
+            let post = self.fetchResultsController.object(at: indexPath)
+            self.stack.remove(post: post)
             
             callback(true)
         }
         return UISwipeActionsConfiguration(actions: [action])
+    }
+}
+
+extension LikesViewController: NSFetchedResultsControllerDelegate {
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>
+    ) {
+        tableView.beginUpdates()
+    }
+
+    func controller(
+        _ controller: NSFetchedResultsController<NSFetchRequestResult>,
+        didChange anObject: Any,
+        at indexPath: IndexPath?,
+        for type: NSFetchedResultsChangeType,
+        newIndexPath: IndexPath?
+    ) {
+        switch type {
+            case .delete:
+                guard let indexPath = indexPath else { fallthrough }
+
+                tableView.deleteRows(at: [indexPath], with: .automatic)
+            case .insert:
+                guard let newIndexPath = newIndexPath else { fallthrough }
+
+                tableView.insertRows(at: [newIndexPath], with: .automatic)
+            case .move:
+                guard
+                    let indexPath = indexPath,
+                    let newIndexPath = newIndexPath
+                else { fallthrough }
+
+                tableView.moveRow(at: indexPath, to: newIndexPath)
+            case .update:
+                guard let indexPath = indexPath else { fallthrough }
+
+                tableView.reloadRows(at: [indexPath], with: .automatic)
+            @unknown default:
+                fatalError()
+        }
+    }
+
+    func controllerDidChangeContent(
+        _ controller: NSFetchedResultsController<NSFetchRequestResult>
+    ) {
+        tableView.endUpdates()
     }
 }
