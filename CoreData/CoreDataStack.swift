@@ -66,14 +66,14 @@ class CoreDataStack {
 
 
     
-    func remove(task: PostEntity) {
-        viewContext.delete(task)
+    func remove(post: PostEntity) {
+        viewContext.delete(post)
         
         save(context: viewContext)
     }
     
     func createNewTask(author: String, description: String, image: String, likes: Int, views: Int) {
-        let context = newBackgroundContext()
+        let context = persistentContainer.viewContext
         let newPost = PostEntity(context: context)
         newPost.id = UUID()
         newPost.author = author
